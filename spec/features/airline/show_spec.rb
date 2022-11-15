@@ -31,6 +31,7 @@ RSpec.describe("Flights Show page") do
     describe("And I see that this list is unique (no duplicate passengers)") do
       it("And I see that this list only includes adult passengers") do
         visit(airline_path(@airline1.id))
+        save_and_open_page
         expect(page).to(have_content("Passengers:#{@passenger1.name}"))
       end
     end
