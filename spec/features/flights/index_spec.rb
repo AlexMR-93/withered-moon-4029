@@ -35,6 +35,7 @@ RSpec.describe("Flights Index page") do
         expect(page).to(have_content("Airline Name:#{@airline1.name}"))
         expect(page).to(have_content("Passengers:#{@passenger1.name}"))
         expect(page).to(have_content("Passengers:#{@passenger2.name}"))
+        expect(page).to_not((have_content("Passengers:#{@passenger3.name}")))
       end
 
       within("#flight-#{@flight2.id}") do
@@ -43,6 +44,7 @@ RSpec.describe("Flights Index page") do
         expect(page).to(have_content("Passengers:#{@passenger2.name}"))
         expect(page).to(have_content("Passengers:#{@passenger4.name}"))
         expect(page).to(have_content("Passengers:#{@passenger5.name}"))
+        expect(page).to_not((have_content("Passengers:#{@passenger1.name}")))
       end
 
       within("#flight-#{@flight3.id}") do
@@ -50,6 +52,7 @@ RSpec.describe("Flights Index page") do
         expect(page).to(have_content("Airline Name:#{@airline2.name}"))
         expect(page).to(have_content("Passengers:#{@passenger6.name}"))
         expect(page).to(have_content("Passengers:#{@passenger7.name}"))
+        expect(page).to_not((have_content("Passengers:#{@passenger2.name}")))
       end
     end
   end

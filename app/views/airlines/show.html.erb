@@ -1,2 +1,5 @@
 <h1> airline show page</h1>
-<% require "pry"; binding.pry %>
+
+<% @airline.only_fans_adults.map do |adult| %>
+  <p>Adult Passengers:<%= adult %>
+<% end %>

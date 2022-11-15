@@ -30,7 +30,9 @@ RSpec.describe(Airline, type: :model) do
     @flight_passenger8 = FlightPassenger.create!(    passenger: @passenger7,     flight: @flight3)
   end
 
-  it("only adults") do
-    expect(@airline1.only_adults).to(eq([@passenger1.name, @passenger5.name, @passenger4.name]))
+  describe("instance method") do
+    it("only fans adults") do
+      expect(@airline1.only_fans_adults).to(eq([@passenger1.name, @passenger5.name, @passenger4.name]))
+    end
   end
 end
